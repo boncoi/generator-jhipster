@@ -96,13 +96,15 @@ _%>
     }
 }
 _%>
-            <dd>
-                <div>
-                    <qr-code [value]='/<%= entityUrl %>'></qr-code>
-                </div>
-            </dd>
+            
             </dl>
 
+
+            <dd>
+                <div>
+                    <qr-code [value]='{{"/<%= entityUrl %>/"+<%= entityInstance %>.<%= primaryKey.name %>+"/view"}}' [size]="150"></qr-code>
+                </div>
+            </dd>
             <button type="submit"
                     (click)="previousState()"
                     class="btn btn-info"
